@@ -1,6 +1,6 @@
 %define name iptstate
 %define version	1.4
-%define release 1mdk
+%define release %mkrel 1
 
 Summary:	Display IP Tables state table information in a "top"-like interface
 Name:		%{name}
