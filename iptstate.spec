@@ -10,6 +10,7 @@ Source1:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2.asc
 BuildRequires:	ncurses-devel
 BuildRequires:	gpm-devel 
 BuildRequires:	libnetfilter_conntrack-devel >= 0.0.50
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 IP Tables State (iptstate) was originally written to impliment the "state top"
