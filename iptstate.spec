@@ -1,7 +1,7 @@
 Summary:	Display IP Tables state table information in a "top"-like interface
 Name:		iptstate
 Version:	2.2.1
-Release:	%mkrel 1
+Release:	%mkrel 3
 Group:		Monitoring
 License:	zlib License
 URL:		http://www.phildev.net/iptstate/
