@@ -1,16 +1,17 @@
 Summary:	Display IP Tables state table information in a "top"-like interface
 Name:		iptstate
 Version:	2.2.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		Monitoring
 License:	zlib License
 URL:		http://www.phildev.net/iptstate/
 Source0:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2
 Source1:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2.asc
+Patch0:		iptstate-2.2.1-gcc43.patch
 BuildRequires:	ncurses-devel
 BuildRequires:	gpm-devel 
 BuildRequires:	libnetfilter_conntrack-devel >= 0.0.50
-BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 IP Tables State (iptstate) was originally written to impliment the "state top"
@@ -23,6 +24,7 @@ even once, an option was added to just display the state table once and exit.
 %prep
 
 %setup -q
+%patch0 -p0
 
 %build
 
@@ -31,12 +33,12 @@ even once, an option was added to just display the state table once and exit.
 %make CXXFLAGS="$CFLAGS -Wall"
  
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall PREFIX=%{buildroot}%{_prefix}
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root)
