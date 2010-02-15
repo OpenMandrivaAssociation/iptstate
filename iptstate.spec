@@ -1,13 +1,12 @@
 Summary:	Display IP Tables state table information in a "top"-like interface
 Name:		iptstate
-Version:	2.2.1
-Release:	%mkrel 5
+Version:	2.2.2
+Release:	%mkrel 1
 Group:		Monitoring
-License:	zlib License
+License:	zlib/libpng License
 URL:		http://www.phildev.net/iptstate/
 Source0:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2
 Source1:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2.asc
-Patch0:		iptstate-2.2.1-gcc43.patch
 BuildRequires:	ncurses-devel
 BuildRequires:	gpm-devel 
 BuildRequires:	libnetfilter_conntrack-devel >= 0.0.50
@@ -22,19 +21,14 @@ Since IP Tables doesn't have a built in way to easily display this information
 even once, an option was added to just display the state table once and exit.
 
 %prep
-
 %setup -q
-%patch0 -p0
 
 %build
-
 %serverbuild
-
 %make CXXFLAGS="$CFLAGS -Wall"
  
 %install
 rm -rf %{buildroot}
-
 %makeinstall PREFIX=%{buildroot}%{_prefix}
 
 %clean
