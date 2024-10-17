@@ -4,7 +4,7 @@ Version:	2.2.5
 Release:	2
 Group:		Monitoring
 License:	zlib/libpng License
-URL:		http://www.phildev.net/iptstate/
+URL:		https://www.phildev.net/iptstate/
 Source0:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2
 Source1:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2.asc
 BuildRequires:	ncurses-devel
