@@ -7,6 +7,7 @@ License:	zlib/libpng License
 URL:		https://www.phildev.net/iptstate/
 Source0:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2
 Source1:	http://www.phildev.net/iptstate/%{name}-%{version}.tar.bz2.asc
+BuildRequires:	make
 BuildRequires:	ncurses-devel
 BuildRequires:	gpm-devel
 BuildRequires:	netfilter_conntrack-devel >= 0.0.50
